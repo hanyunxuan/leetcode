@@ -19,22 +19,20 @@ Follow up:
 
 Coud you solve it without converting the integer to a string?
 """
-class Solution(object):
-    def isPalindrome(self, x):
-        """
-        :type x: int
-        :rtype: bool
-        """
-        return False if x<0 else x == int(str(x)[::-1])
-        dict = {"(": 1, ")": -1, "[": 2, "]": -2, "{": 1, "}": 1, }
-        count = 0
-        num = ""
-        for i in range(len(s)):
-            count += dict[s[i]]
-            num += str(abs(dict[s[i]]))
-            if count == 0:
-                num = ""
-                if num == num[::-1]:
-                    output = True
-                else:
-                    return False
+
+
+def isPalindrome( x):
+    """
+    :type x: int
+    :rtype: bool
+    """
+    # return False if x < 0 else x == int(str(x)[::-1])
+
+    if x < 0:
+        return False
+    p, res = x, 0
+    while p:
+        res = res * 10 + p % 10
+        p /= 10
+    return res == x
+print(isPalindrome(121))

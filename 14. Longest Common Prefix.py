@@ -34,6 +34,11 @@ class Solution(object):
                             # count.append(j)
                             count += 1
                 s = str(''.join(str(i) for i in com))
+                # s=str(com)
             return s
         else:
             return ""
+
+
+obj= Solution()
+print(obj.longestCommonPrefix(["flower","flow","flight"]))
